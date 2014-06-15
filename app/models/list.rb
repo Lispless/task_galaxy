@@ -1,5 +1,6 @@
 class List < ActiveRecord::Base
-  has_many :users
+  has_many :shared_lists
+  has_many :tasks
 
   validates :title, presence: true
   validates :task, presence: true

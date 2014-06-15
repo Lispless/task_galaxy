@@ -10,13 +10,26 @@ users = [
 	first_name: 'Kurt'
 	last_name: 'Henry'
 	email: 'here@gmail.com'
+	},
+
+{
+	first_name: 'Crystal'
+	last_name: 'Henry'
+	email: 'there@gmail.com'
 	}
 ]
 
-lists = [
-{
-	title: 'Todo list'
-	task: 'Wash something'
-	description: 'Find something dirty to make clean'
+users.each do |user_hash|
+	user_attr = {
+		first_name: user_hash[:first_name],
+		last_name: user_hash[:last_name],
+		email: user_hash[:email]
 	}
-]
+
+	user = User.find_by(user_attr)
+	user ||= User.create!(user_attr)
+
+	if !User.exist?(user_attr)
+		User.create!(user_attr)
+	end
+end

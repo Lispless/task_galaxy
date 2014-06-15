@@ -12,7 +12,7 @@
 development:
   adapter : postgresql
   encoding: unicode
-  database: task-galaxy_development
+  database: task_galaxy
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
