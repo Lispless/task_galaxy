@@ -6,4 +6,6 @@ class CreateLists < ActiveRecord::Migration
 	  	t.timestamps
     end
   end
+
+  before_destroy :tasks.destroy_all
 end
